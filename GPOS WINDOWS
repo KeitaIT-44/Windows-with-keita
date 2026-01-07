@@ -1,0 +1,168 @@
+1. Active Directory Domain Services installeren
+Rollen installeren
+
+Server Manager openen
+
+Add Roles and Features
+
+Role-based installation
+
+Server selecteren
+
+Active Directory Domain Services aanvinken
+
+Installeren
+
+Server promoten tot Domain Controller
+
+Meldingen → Promote this server to a domain controller
+
+New forest kiezen
+
+Domeinnaam instellen (bijv. school.local)
+
+DSRM-wachtwoord instellen
+
+Server herstart
+
+✔ Resultaat: server is Domain Controller
+
+2. Gebruikers en groepen aanmaken
+Active Directory Users and Computers
+
+Tools → Active Directory Users and Computers
+
+OU (Organizational Unit) aanmaken
+
+Rechtsklik domein → New → Organizational Unit
+
+Voorbeeld: Users, Computers, Admins
+
+Gebruiker aanmaken
+
+Rechtsklik OU → New → User
+
+Naam + gebruikersnaam
+
+Wachtwoord instellen
+
+Optioneel: “User must change password at next logon”
+
+Groep aanmaken
+
+New → Group
+
+Group scope: Global
+
+Group type: Security
+
+Gebruiker toevoegen aan groep
+
+Gebruiker → Member Of → Add groep
+
+3. Rechten toekennen (NTFS + Shares)
+Map maken
+D:\Shares\Finance
+
+Share rechten
+
+Rechtsklik map → Properties → Sharing
+
+Advanced Sharing → Share this folder
+
+Permissions:
+
+Remove Everyone
+
+Voeg groep toe (bijv. Finance)
+
+Geef Read / Change / Full Control
+
+NTFS rechten
+
+Properties → Security
+
+Add groep
+
+Rechten instellen:
+
+Read
+
+Modify
+
+Full control
+
+📌 Examenvraag-tip:
+➡️ Effectieve rechten = combinatie van Share + NTFS
+
+4. Group Policy Objects (GPO’s)
+Group Policy Management openen
+
+Tools → Group Policy Management
+
+a) Wachtwoordbeleid
+
+Default Domain Policy openen
+
+Computer Configuration → Policies → Windows Settings
+
+Security Settings → Account Policies → Password Policy
+
+Instellingen:
+
+Minimum password length
+
+Password complexity enabled
+
+Maximum password age
+
+b) Desktop / achtergrond instellen
+
+Nieuwe GPO maken
+
+Linken aan OU met users
+
+User Configuration → Policies → Administrative Templates
+
+Desktop → Desktop Wallpaper
+
+Pad instellen (bijv. \\server\share\wallpaper.jpg)
+
+c) Software blokkeren / toestaan
+
+Nieuwe GPO
+
+Computer Configuration → Windows Settings
+
+Security Settings → Software Restriction Policies
+
+New Software Restriction Policies
+
+Extra Rules → Path Rule
+
+Pad: C:\Program Files\App
+
+Security level: Disallowed
+
+5. Clients koppelen aan het domein
+Op Windows client
+
+Settings → System → About
+
+Rename this PC (Advanced)
+
+Change → Domain
+
+Domeinnaam invoeren
+
+Inloggen met domein admin
+
+Herstart
+
+Controle
+
+Computer verschijnt in AD
+
+GPO’s toepassen:
+
+gpupdate /force
