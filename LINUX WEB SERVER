@@ -1,0 +1,116 @@
+# Linux Webserver Setup – Apache2, PHP, MariaDB & phpMyAdmin
+
+Deze repository bevat een **stap-voor-stap handleiding** voor het opzetten van een Linux webserver
+met **Apache2**, **PHP**, **MariaDB (MySQL)** en **phpMyAdmin**.  
+Geschikt voor **examens**, **oefeningen systeembeheer** en **basis webhosting**.
+
+---
+
+## Getest op
+- Ubuntu Server 20.04 / 22.04
+- Debian 11
+
+---
+
+## Inhoud
+1. Apache2 installeren  
+2. PHP installeren  
+3. MariaDB installeren en beveiligen  
+4. phpMyAdmin installeren en configureren  
+5. Configuratiebestanden aanpassen  
+6. Services starten en herstarten  
+7. Testen & controle  
+8. Exam cheat sheet  
+
+---
+
+## 1. Apache2 installeren
+```bash
+sudo apt update
+sudo apt install apache2 -y
+
+
+systemctl status apache2
+http://localhost
+2. PHP installeren
+sudo apt install php libapache2-mod-php php-cli php-mysql -y
+
+PHP testen
+sudo nano /var/www/html/info.php
+
+
+Inhoud:
+
+<?php
+phpinfo();
+?>
+
+
+Open in browser:
+
+http://localhost/info.php
+
+3. MariaDB (MySQL) installeren
+sudo apt install mariadb-server mariadb-client -y
+
+Service status
+systemctl status mariadb
+
+Database beveiligen
+sudo mysql_secure_installation
+
+
+Aanbevolen antwoorden:
+
+Root password instellen → Yes
+
+Remove anonymous users → Yes
+
+Disallow root login remotely → Yes
+
+Remove test database → Yes
+
+Reload privilege tables → Yes
+
+4. phpMyAdmin installeren
+sudo apt install phpmyadmin -y
+
+Tijdens installatie
+
+Webserver: apache2
+
+Database configureren met dbconfig-common: Yes
+
+phpMyAdmin wachtwoord instellen
+
+5. phpMyAdmin koppelen aan Apache
+sudo nano /etc/apache2/apache2.conf
+
+
+Onderaan toevoegen:
+
+Include /etc/phpmyadmin/apache.conf
+
+6. Services herstarten
+sudo systemctl restart apache2
+sudo systemctl restart mariadb
+
+7. Test phpMyAdmin
+
+Open in browser:
+
+http://localhost/phpmyadmin
+
+
+Inloggen met:
+
+Gebruiker: root of phpMyAdmin-user
+
+Wachtwoord: ingesteld tijdens installatie
+
+8. Exam Cheat Sheet
+Services
+systemctl status apache2
+systemctl status mariadb
+systemctl restart apache2
+systemctl restart mariadb
