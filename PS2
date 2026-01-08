@@ -1,0 +1,119 @@
+Bijlage 2.1 – Sjabloon Testrapport
+Testrapport
+
+In dit testrapport zijn zeven testscenario’s opgenomen om het script ADscripts.ps1 te testen.
+Per testscenario is vastgelegd of de functionaliteit correct werkt. De resultaten zijn onderbouwd met toelichting en screenshots.
+
+1. #C1 – Test PowerShell versie (7 of hoger)
+Testplan
+Geteste onderdelen	Verwacht resultaat	Test positief?
+Script uitvoeren in PowerShell lager dan versie 7	Script geeft foutmelding	Ja
+Script uitvoeren in PowerShell lager dan versie 7	Script wordt afgesloten	Ja
+Na uitvoering
+
+Het script is getest in PowerShell ISE (versie 5.1) en in PowerShell 7.
+
+Toelichting
+
+Bij uitvoering in PowerShell ISE (lager dan versie 7) wordt het script correct beëindigd omdat niet aan de versie-eis wordt voldaan.
+Bij uitvoering in PowerShell 7 start het script zonder fouten. De versiecontrole functioneert zoals verwacht.
+
+📸 Screenshot: foutmelding in PowerShell ISE en correcte start in PowerShell 7
+
+2. #C2 – Gebruikerstoestemming voor uitvoer script
+Testplan
+Geteste onderdelen	Verwacht resultaat	Test positief?
+Script vraagt toestemming voor uitvoering	Gebruiker kan ‘ja’ of ‘yes’ invoeren	Ja
+Ongeldige invoer	Script vraagt opnieuw om invoer	Nee
+Invoer ‘nee’ of ‘no’	Script wordt afgesloten	Nee
+Na uitvoering
+
+Het script is getest met verschillende invoeren (ja, nee, ongeldige tekst).
+
+Toelichting
+
+Het script vraagt correct om toestemming voordat het wordt uitgevoerd.
+Bij invoer van ja wordt het script voortgezet.
+Bij invoer van nee of ongeldige invoer stopt het script echter niet zoals verwacht en wordt de invoer niet opnieuw gevraagd. De controle is aanwezig, maar de afhandeling is onvolledig.
+
+📸 Screenshot: invoer ‘ja’ en ‘nee’
+
+3. #C3 – Test Active Directory module
+Testplan
+Geteste onderdelen	Verwacht resultaat	Test positief?
+AD-module ontbreekt	Script geeft foutmelding	Ja
+AD-module ontbreekt	Script wordt afgesloten	Ja
+Na uitvoering
+
+Het script is getest op een systeem zonder geïnstalleerde Active Directory-module.
+
+Toelichting
+
+Wanneer de Active Directory-module ontbreekt, detecteert het script dit correct. Er wordt een foutmelding weergegeven en het script wordt afgesloten om verdere fouten te voorkomen.
+
+📸 Screenshot: foutmelding AD-module ontbreekt
+
+4. Test bronbestand (CSV-bestand)
+Testplan
+Geteste onderdelen	Verwacht resultaat	Test positief?
+CSV-bestand ontbreekt	Script geeft foutmelding	Nee
+CSV-bestand ontbreekt	Script wordt afgesloten	Ja
+Na uitvoering
+
+Het script is uitgevoerd zonder aanwezig CSV-bestand.
+
+Toelichting
+
+Wanneer het CSV-bronbestand ontbreekt, stopt het script correct. Er wordt echter geen duidelijke foutmelding weergegeven aan de gebruiker. De foutafhandeling is functioneel aanwezig, maar onvoldoende zichtbaar.
+
+📸 Screenshot: script stopt zonder CSV-bestand
+
+5. #A1 – Test functie Add-ToLog
+Testplan
+Geteste onderdelen	Verwacht resultaat	Test positief?
+Logmap ontbreekt	Script geeft foutmelding	Ja
+Logmap is read-only	Script geeft foutmelding	Ja
+Na uitvoering
+
+De logmap is verwijderd en vervolgens ingesteld als alleen-lezen.
+
+Toelichting
+
+De functie Add-ToLog controleert correct of de logmap bestaat en beschrijfbaar is. Bij beide foutscenario’s wordt een foutmelding weergegeven. De loggingfunctie werkt conform verwachting.
+
+📸 Screenshot: foutmelding logging
+
+6. #A2 – Test bestaande gebruikers
+Testplan
+Geteste onderdelen	Verwacht resultaat	Test positief?
+Toevoegen bestaande gebruiker	Script geeft foutmelding	Ja
+Foutmelding wordt gelogd	Fout wordt vastgelegd	Nee
+Na uitvoering
+
+Het script is uitgevoerd met een gebruiker die al bestaat in Active Directory.
+
+Toelichting
+
+Het script herkent correct wanneer een gebruiker al bestaat en geeft een foutmelding. De fout wordt echter niet zichtbaar vastgelegd in het logbestand, waardoor dit onderdeel niet volledig correct functioneert.
+
+📸 Screenshot: foutmelding bestaande gebruiker
+
+7. #A3 – Test aanmaak gebruiker
+Testplan
+Geteste onderdelen	Verwacht resultaat	Test positief?
+Gebruikers uit CSV aanmaken	Gebruiker wordt aangemaakt	Nee
+Controle op vreemde tekens	Geen ongeldige tekens	Ja
+Wachtwoordinstelling	Gebruiker moet wachtwoord wijzigen	Ja
+Na uitvoering
+
+Het script is uitgevoerd met een CSV-bestand met nieuwe gebruikers.
+
+Toelichting
+
+De gebruiker is niet aangemaakt in Active Directory. De validatie van gebruikersgegevens en de wachtwoordinstellingen functioneren wel correct. De fout lijkt te ontstaan vóór de daadwerkelijke aanmaak van de gebruiker.
+
+📸 Screenshot: Active Directory en PowerShell-uitvoer
+
+Eindconclusie
+
+Alle testscenario’s zijn afzonderlijk uitgevoerd. De meeste controles functioneren technisch correct. Enkele onderdelen, zoals gebruikersinvoer en foutlogging, zijn onvolledig geïmplementeerd. De testresultaten zijn correct vastgelegd en onderbouwd met toelichting en screenshots.
