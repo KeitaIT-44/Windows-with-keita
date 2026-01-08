@@ -1,0 +1,87 @@
+Doel
+
+Het doel van dit ontwerp is om de beheerder zo goed mogelijk te informeren over:
+
+de werking van het script;
+
+de verschillende processtappen;
+
+mogelijke foutmeldingen;
+
+en hoe deze foutmeldingen kunnen worden opgelost, voordat gegevens in Active Directory worden verwerkt.
+
+Plan van aanpak
+Achtergrond
+
+PurpleIT wil meerdere processen automatiseren. De leidinggevende heeft opdracht gegeven om een ontwerp te maken voor het automatiseren van het HR-proces rondom het aanmaken van gebruikers in Active Directory.
+
+Aanleiding
+
+Er ontstaan regelmatig fouten en miscommunicatie tussen medewerkers. Door dit proces te automatiseren en te standaardiseren worden fouten verminderd en wordt tijd bespaard.
+
+Tussenresultaat
+
+Het tussenresultaat is een uitgebreid en verduidelijkt proces, ondersteund door een stroomschema. Dit stroomschema zorgt ervoor dat het script logischer, veiliger en betrouwbaarder functioneert.
+
+Eindresultaat
+
+Het eindresultaat is een volledig ontwerp bestaande uit:
+
+een duidelijk stroomschema;
+
+bijbehorende toelichting;
+
+foutafhandeling en logging;
+waardoor het script correct functioneert voordat het wordt toegevoegd aan het productiesysteem.
+
+Borgen van kwaliteit
+
+Uitgebreide foutafhandeling
+
+Logging van alle belangrijke gebeurtenissen
+
+Stoppen van het script bij kritieke fouten
+
+Duidelijke meldingen voor de beheerder
+
+Stroomschema
+
+(Zie bijgevoegd stroomschema)
+
+Uitleg van het stroomschema
+
+Start van het script.
+
+De beheerder wordt gevraagd of het script mag worden uitgevoerd (Ja/Nee).
+
+Bij Nee stopt het script direct.
+
+Bij Ja controleert het script of PowerShell versie 7 of nieuwer wordt gebruikt.
+
+Controle of de Active Directory PowerShell-module aanwezig is.
+
+Controle of het CSV-bestand aanwezig is.
+
+Controle of er fouten zijn gevonden:
+
+Zo ja: toon foutmeldingen en stop het script.
+
+Zo nee: lees het CSV-bestand uit.
+
+Controle of de gebruiker al bestaat in Active Directory:
+
+Zo ja: schrijf een melding naar het logboek en informeer de beheerder.
+
+Controle of de afdeling (OU) bestaat:
+
+Zo nee: genereer een foutmelding.
+
+Nieuwe gebruikers krijgen een standaard wachtwoord.
+
+Gebruikers worden verplicht hun wachtwoord te wijzigen bij eerste login.
+
+De beheerder kan alle foutmeldingen terugzien.
+
+Het script rondt af en informeert de beheerder.
+
+Einde van het proces.
