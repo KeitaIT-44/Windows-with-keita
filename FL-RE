@@ -1,0 +1,19 @@
+Resultaat uitvoer (voorbeeldbeschrijvingen)
+
+Omdat er nog geen werkende tool beschikbaar is, worden hieronder voorbeelden beschreven van hoe de uitvoer in de PowerShell-console eruit zal zien:
+
+“Mag dit script worden uitgevoerd? (Ja/Nee): Nee”
+
+“Script is gestopt door de beheerder.”
+
+“PowerShell versie 7 of nieuwer gedetecteerd.”
+
+“Active Directory-module is aanwezig.”
+
+“CSV-bestand succesvol ingelezen.”
+
+“Gebruiker bestaat al in Active Directory – melding geregistreerd.”
+
+“Afdeling niet gevonden – script gestopt.”
+
+“Script succesvol afgerond.”
