@@ -1,0 +1,14 @@
+Bijlage 2.0 – Procesbeschrijvingen
+Processen in het kader van informatiebeveiliging
+
+In deze bijlage worden processen beschreven die relevant zijn voor informatiebeveiliging binnen een organisatie. Per proces is aangegeven wat het doel is, of het proces wordt geautomatiseerd en wat de motivatie hiervoor is.
+
+Procescode	Doel	Wel / niet automatiseren	Toelichting
+A.Switch	Centraal bijhouden hoeveel netwerkverkeer over de interfaces van switches verloopt.	Wel	Het monitoren van netwerkverkeer is cruciaal voor informatiebeveiliging en netwerkbeheer. Door dit proces te automatiseren kan ongebruikelijk verkeer sneller worden gedetecteerd, kunnen prestaties worden geoptimaliseerd en kan bandbreedte efficiënter worden ingezet.
+A.Proxy	Centraal registreren welke websites binnen het bedrijf worden bezocht.	Wel	Door het gebruik van een proxy te automatiseren kan internetgebruik worden gemonitord. Dit verkleint beveiligingsrisico’s, helpt bij het opsporen van malware of phishing en ondersteunt het naleven van beveiligingsbeleid.
+A.Wireless	Bijhouden welke apparaten verbonden zijn met het interne wifi-netwerk.	Niet	Dit proces wordt als laag risico beschouwd binnen deze organisatie. Het handmatig bijhouden van verbonden apparaten is voldoende en automatisering levert in dit geval weinig extra beveiligingsvoordeel op.
+A.Network	Centraal bijhouden hoeveel apparaten zijn aangesloten op het bedrijfsnetwerk.	Wel	Door dit proces te automatiseren ontstaat inzicht in groei en gebruik van het netwerk. Dit helpt bij capaciteitsplanning, het verwijderen van ongebruikte apparaten en het verbeteren van de netwerkbeveiliging.
+A.PaperPassword	Vastleggen of medewerkers wachtwoorden op toegankelijke plekken noteren.	Wel	Het opschrijven van wachtwoorden vormt een groot beveiligingsrisico. Door dit proces te automatiseren (bijvoorbeeld via meldingen of controles) wordt bewustwording vergroot en wordt de kans op datalekken verkleind.
+A.Building	Bijhouden hoeveel personen aanwezig zijn in een kantoorgebouw.	Niet	Dit proces heeft geen directe invloed op informatiebeveiliging. Daarom is gekozen om dit proces niet te automatiseren binnen het kader van deze opdracht.
+A.Lights	Automatisch aan- en uitschakelen van verlichting op basis van aanwezigheid.	Wel	Automatisering van verlichting draagt bij aan energiebesparing en efficiënt gebouwbeheer. Hoewel het indirect is, ondersteunt dit proces een veilige en duurzame werkomgeving.
+A.Users	Importeren van gebruikers in Active Directory via een CSV-bestand.	Wel	Het automatiseren van gebruikersbeheer vermindert fouten, bespaart tijd en verhoogt de betrouwbaarheid van accountbeheer. Dit is essentieel voor informatiebeveiliging en toegangscontrole binnen de organisatie.
