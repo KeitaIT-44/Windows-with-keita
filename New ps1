@@ -1,0 +1,104 @@
+Bijlage 2.1 – Ingevuld Testrapport
+
+C1 – Test PowerShell versie
+
+Verwacht resultaat
+Het script controleert of PowerShell versie 7 of hoger wordt gebruikt.
+Bij een lagere versie wordt een foutmelding getoond en stopt het script.
+
+Test positief?
+Ja
+
+Toelichting
+Het script controleert $PSVersionTable.PSVersion.Major.
+Bij een versie lager dan 7 wordt de foutmelding “PowerShell 7 of hoger is vereist” weergegeven en stopt het script met exit.
+
+⸻
+
+C2 – Gebruiker om toestemming vragen
+
+Verwacht resultaat
+Het script vraagt of het uitgevoerd mag worden.
+Bij iets anders dan J stopt het script.
+
+Test positief?
+Ja
+
+Toelichting
+Het script gebruikt Read-Host.
+Als de gebruiker geen J invoert, wordt “Script afgebroken” getoond en stopt het script.
+
+⸻
+
+C3 – Test Active Directory module
+
+Verwacht resultaat
+Het script controleert of de ActiveDirectory-module bestaat.
+Als deze ontbreekt, stopt het script.
+
+Test positief?
+Ja
+
+Toelichting
+Met Get-Module -ListAvailable -Name ActiveDirectory wordt gecontroleerd of de module aanwezig is.
+Ontbreekt deze, dan verschijnt een foutmelding en stopt het script.
+
+⸻
+
+C4 – Test bronbestand (CSV)
+
+Verwacht resultaat
+Het script controleert of users.csv bestaat.
+Als het bestand ontbreekt, stopt het script.
+
+Test positief?
+Ja
+
+Toelichting
+Met Test-Path $csvfile wordt gecontroleerd of het CSV-bestand aanwezig is.
+Bij afwezigheid verschijnt een foutmelding en stopt het script.
+
+⸻
+
+A1 – Test Add-ToLog functie
+
+Verwacht resultaat
+Het script geeft een foutmelding als de map Log niet bestaat of niet schrijfbaar is.
+
+Test positief?
+Ja
+
+Toelichting
+De functie Add-ToLog gebruikt een Try / Catch.
+Als het bestand niet kan worden geschreven, wordt een foutmelding getoond en stopt het script.
+
+⸻
+
+A2 – Test bestaande gebruikers
+
+Verwacht resultaat
+Als een gebruiker al bestaat, wordt deze niet opnieuw aangemaakt en wordt een foutmelding gelogd.
+
+Test positief?
+Ja
+
+Toelichting
+Met Get-ADUser -Filter {SamAccountName -eq $Username} wordt gecontroleerd of de gebruiker bestaat.
+Bij een bestaande gebruiker wordt een waarschuwing weergegeven en wordt dit in het logbestand opgeslagen.
+
+⸻
+
+A3 – Test aanmaak nieuwe gebruikers
+
+Verwacht resultaat
+Gebruikers uit de CSV worden correct aangemaakt.
+Wachtwoord moet worden gewijzigd bij eerste login.
+Geen vreemde tekens in namen.
+
+Test positief?
+Ja
+
+Toelichting
+De gebruikers worden aangemaakt met New-ADUser.
+De optie -ChangePasswordAtLogon $True zorgt ervoor dat het wachtwoord bij eerste login moet worden aangepast.
+Voor- en achternaam worden correct ingesteld vanuit de CSV.
