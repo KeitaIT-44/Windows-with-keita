@@ -1,0 +1,30 @@
+▶ VTP
+conf t
+vtp domain NETSERVICE
+vtp mode client
+interface range f0/1 - 5
+ switchport mode access
+ switchport access vlan 10
+
+interface range f0/6 - 14
+ switchport mode access
+ switchport access vlan 20
+
+interface range f0/15 - 18
+ switchport mode access
+ switchport access vlan 30
+
+interface f0/19
+ switchport mode access
+ switchport access vlan 40
+
+interface range f0/20 - 24
+ switchport mode access
+ switchport access vlan 99
+interface g0/1
+ switchport mode trunk
+▶ Access Poi
+interface g0/2
+ switchport mode access
+ switchport access vlan 50
+ 
