@@ -1,0 +1,9 @@
+conf t
+
+interface g0/0/0
+ ip address dhcp
+ no shutdown
+	
+interface g0/0/2
+ ip address 10.100.0.1 255.255.0.0
+ no shutdown
