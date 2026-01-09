@@ -29,3 +29,25 @@ interface vlan 40
 interface vlan 50
  ip address 10.50.0.1 255.255.0.0
  no shutdown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+conf t
+
+ip dhcp excluded-address 10.50.0.0 10.50.0.49
+
+ip dhcp pool 50
+ network 10.50.0.0 255.255.0.0
+ default-router 10.50.0.1
+ dns-server 180.115.0.6
