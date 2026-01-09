@@ -1,0 +1,36 @@
+Procescode
+Doel
+Wel / niet automatiseren
+Toelichting
+A.Switch
+Centraal bijhouden hoeveel netwerkverkeer over een switchinterface gaat.
+Wel automatiseren
+Netwerkverkeer verandert continu en moet real-time worden gemonitord. Dit kan niet handmatig en moet met automatische netwerkmonitoring gebeuren.
+A.Proxy
+Centraal bijhouden welke websites binnen het bedrijf worden bezocht.
+Wel automatiseren
+Het aantal webverzoeken is groot en moet automatisch worden gelogd voor beveiliging en controle.
+A.Wireless
+Bijhouden wie met welk apparaat verbonden is met het wifi-netwerk.
+Wel automatiseren
+Verbindingsgegevens veranderen voortdurend en moeten automatisch worden geregistreerd voor beveiliging.
+A.Network
+Bijhouden hoeveel apparaten zijn aangesloten op het netwerk.
+Wel automatiseren
+Dit kan alleen betrouwbaar met automatische netwerkmonitoring.
+A.PaperPassword
+Bijhouden wie wachtwoorden opschrijft op papier.
+Niet automatiseren
+Dit is menselijk gedrag en kan niet technisch automatisch worden gemeten.
+A.Building
+Bijhouden hoeveel mensen in een gebouw aanwezig zijn.
+Wel automatiseren
+Dit kan met toegangssystemen en badges automatisch worden geregistreerd.
+A.Lights
+Verlichting automatisch aan- en uitschakelen op basis van aanwezigheid.
+Wel automatiseren
+Bewegingssensoren en automatisering besparen energie en verhogen comfort.
+A.Users
+Gebruikers aanmaken in Active Directory via een CSV-bestand.
+
+
