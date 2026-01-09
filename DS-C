@@ -1,0 +1,38 @@
+▶ VTP
+conf t
+vtp domain NETSERVICE
+vtp mode server
+▶ VLAN’s
+vlan 10
+ name balie
+vlan 20
+ name backoffice
+vlan 30
+ name directie
+vlan 40
+ name printers
+vlan 50
+ name gastwifi
+vlan 99
+ name leeg
+▶ Trunks
+interface range g1/0/1 - 3
+ switchport mode trunk
+
+interface g1/0/4
+ switchport mode trunk
+ 
+
+▶ IP-adres uplink
+interface g1/0/24
+ ip address 10.200.0.2 255.255.0.0
+ no shutdown
+▶ VLAN-interfaces
+
+interface vlan 40
+ ip address 10.40.0.1 255.255.0.0
+ no shutdown
+
+interface vlan 50
+ ip address 10.50.0.1 255.255.0.0
+ no shutdown
