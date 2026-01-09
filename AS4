@@ -23,7 +23,7 @@ interface range f0/20 - 24
  switchport access vlan 99
 interface g0/1
  switchport mode trunk
-▶ Access Poi
+
 interface g0/2
  switchport mode access
  switchport access vlan 50
