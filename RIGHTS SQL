@@ -1,0 +1,66 @@
+🔧 STAPPEN IN PHPMYADMIN:
+1. Open phpMyAdmin
+
+Ga naar: http://localhost/phpmyadmin op VM1
+
+Log in als root of een admin-gebruiker
+
+2. Maak de database (indien nog niet gedaan)
+
+Als de database purple_hrm nog niet bestaat:
+
+Klik op "Databases"
+
+Maak een nieuwe database aan met de naam: purple_hrm
+
+3. Nieuwe gebruiker aanmaken
+
+Klik op tabblad "Gebruikersaccounts" (Users)
+
+Klik op "Nieuwe gebruiker toevoegen"
+
+Vul de velden in:
+
+Gebruikersnaam: Kandidaat
+
+Hostnaam: localhost
+
+Wachtwoord: 3xamen2023!
+
+Nogmaals wachtwoord: 3xamen2023!
+
+4. Rechten toekennen voor alleen database purple_hrm
+
+Vink aan: "Beperk toegangsrechten tot één database"
+
+Selecteer: purple_hrm
+
+Vink de gewenste rechten aan, bijvoorbeeld:
+
+SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER (basistoegang)
+
+Klik op: "Gebruiker aanmaken"
+
+5. Test de nieuwe gebruiker
+
+Log uit phpMyAdmin
+
+Log opnieuw in met:
+
+Gebruikersnaam: Kandidaat
+
+Wachtwoord: 3xamen2023!
+
+Controleer of je alleen toegang hebt tot purple_hrm
+
+6. Screenshot maken
+
+Maak screenshots van:
+
+Het aanmaken van de gebruiker
+
+Succesvolle login als Kandidaat
+
+Toegang tot enkel purple_hrm
+
+Voeg deze toe aan je Bijlage 3.2 Sjabloon verslag SQL
