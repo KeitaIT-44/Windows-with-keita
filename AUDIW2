@@ -1,0 +1,37 @@
+1. Security-incident (T1)
+Tijdens de securitycontrole bij WebWorx zijn meerdere problemen gevonden.
+De website was bereikbaar via HTTP er was geen WAF actief en de server was via SSH open voor iedereen. Ook werden er zwakke wachtwoorden gebruikt.
+Door deze problemen was de website niet goed beveiligd. Hierdoor konden hackers proberen in te breken of gegevens te gaan stelen. Dit is een beveiligingsincident omdat de veiligheid van de website en klanten in gevaar was.
+
+2. Technische oplossingen (T2)
+Na het vinden van het probleem zijn de volgende acties uitgevoerd:
+•	Er is een WAF ingeschakeld om aanvallen tegen te houden.
+•	De website is ingesteld op HTTPS zodat gegevens versleuteld worden verstuurd.
+•	De firewall is aangepast zodat alleen vaste ip adressen via ssh kunnen inloggen.
+•	Er is een sterk wachtwoordbeleid ingesteld.
+Deze maatregelen zorgen ervoor dat de server en website beter beveiligd zijn.
+3. AVG (T2)
+Tijdens deze controle zijn geen persoonsgegevens bekeken of opgeslagen.
+Alleen de technische gegevens zijn gebruikt zoals ip adressen en logbestanden.
+Deze gegevens zijn veilig behandeld en niet gedeeld met anderen.
+Hiermee is volgens de AVG-regels gewerkt.
+4. Logboek (T3)
+Tijd	Wat is gedaan
+12:00	Start van het security-incident
+12:15	Kwetsbaarheden gecontroleerd
+12:40	WAF ingeschakeld
+13:10	HTTPS ingesteld
+13:40	Firewallregels aangepast
+14:10	Sterk wachtwoordbeleid ingesteld
+14:40	Controle uitgevoerd of alles werkt
+15:00	Klant geïnformeerd en logboek afgerond
+
+5. Informeren (T4)
+E-mail aan WebWorx
+Beste WebWorx,
+Tijdens de controle hebben wij de beveiligingsproblemen gevonden op uw website en server. Deze problemen konden zorgen voor misbruik.
+Wij hebben deze problemen opgelost door een WAF in te gaan schakelen, HTTPS te gebruiken en de server beter af te schermen.
+In de bijlage vindt u het logboek en de uitleg.
+Met vriendelijke groet,
+[Jouw naam]
+
