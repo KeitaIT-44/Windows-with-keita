@@ -39,13 +39,11 @@ Dit is een veiligheidsrisico.
 2.	Verwacht resultaat
 Telnet is uitgeschakeld op alle netwerkapparaten (Edge, AS1, AS2, AS3).
 3.	Afwijkingen
-4.	Telnet stond nog standaard aan, omdat er geen “transport input” regel in de configuratie stond
+4.	Er zijn geen afwijkingen gevonden, Telnet is overal uitgeschakeld en alleen SSH is actief.
 5.	Impact/risico
-6.	Als Telnet aanstaat, kunnen wachtwoorden en commando’s worden afgeluisterd.
-Dit is onveilig voor het netwerk.
+6.	Geen risico, omdat alle beheerverbindingen versleuteld via SSH verlopen.
 7.	Advies
-8.	Zet Telnet uit met het commando transport input none of gebruik transport input ssh als SSH is ingesteld.
-Controleer dit regelmatig met show running-config | include vty.
+8.	Laat Telnet uitgeschakeld en gebruik alleen SSH voor veilig beheer.
 
 
 
