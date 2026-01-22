@@ -1,0 +1,20 @@
+sudo ss -tuln
+
+sudo apt update
+sudo apt install ufw -y
+
+# SSH (poort 22) – nodig om in te loggen
+sudo ufw allow OpenSSH
+
+# Webserver – HTTP en HTTPS
+sudo ufw allow 80,443/tcp
+
+
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw enable
+sudo ufw status verbose
+
+
+
