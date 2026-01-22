@@ -1,0 +1,19 @@
+sudo ufw enable
+
+sudo ufw status verbose
+
+
+
+sudo apt update
+sudo apt install ufw -y
+
+
+# Sta alleen inkomend SSH (poort 22) toe
+sudo ufw allow OpenSSH
+
+# Sta alleen webverkeer toe: HTTP (80) en HTTPS (443)
+sudo ufw allow 80,443/tcp
+
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
