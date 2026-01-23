@@ -1,7 +1,0 @@
-sudo mkdir -p /backup
-
-crontab -e
-
-0 2 * * * rsync -a /var/www/html/ /backup/html-$(date +\%F)/
-
-crontab -l
